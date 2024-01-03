@@ -47,9 +47,6 @@ ob_flush();
 // Content Section
 ob_start();?>
 <div class="card">
-  <div class="card-header bg-primary">
-    <h3 class="card-title">Detail Poli</h3>
-  </div>
   <div class="card-body">
   <?php
                     $poli = $pdo->prepare("SELECT d.nama_poli as poli_nama,
@@ -77,33 +74,44 @@ ob_start();?>
                       while($p = $poli->fetch()) {
                     ?>
 
-                      <center>
-                    
-                      <h5>Nama Poli</h5>
-                      <?= $p['poli_nama']?>
-                      <hr>
-
-                      <h5>Nama Dokter</h5>
-                      <?= $p['dokter_nama']?>
-                      <hr>
-
-                      <h5>Hari</h5>
-                      <?= $p['jadwal_hari']?>
-                      <hr>
-
-                      <h5>Mulai</h5>
-                      <?= $p['jadwal_mulai']?>
-                      <hr>
-
-                      <h5>Selesai</h5>
-                      <?= $p['jadwal_selesai']?>
-                      <hr>
-
-                      <h5>Nomor Antrian</h5>
-                      <button class="btn btn-success"><?= $p['antrian']?></button>
-                      <hr>
-
-                      </center>
+                      <div class="card text-center">
+                          <div class="card-header d-flex">
+                            <div class="card-header">
+                              <strong>Poliklinik UDINUS</strong>
+                            </div>
+                            <a href="#" class="btn btn-warning text-white"><strong>No Antrian <?= $p['antrian']?></strong></a>
+                          </div>
+                          <div class="col">
+                            <div class="row gx-5 mt-2">
+                              <h5 class="card-title col">Nama Poli</h5>
+                              <h5 class="card-title col mb-2">:</h5>
+                              <h5 class="card-title col mb-2"> <?= $p['poli_nama']?></h5>
+                            </div>
+                            <div class="row gx-5">
+                              <h5 class="card-title col mb-2">Nama Dokter</h5>
+                              <h5 class="card-title col mb-2">:</h5>
+                              <h5 class="card-title col mb-2"><?= $p['dokter_nama']?></h5>
+                            </div>
+                            <div class="row gx-5">
+                              <h5 class="card-title col mb-2">Hari</h5>
+                              <h5 class="card-title col mb-2">:</h5>
+                              <h5 class="card-title col mb-2"><?= $p['jadwal_hari']?></h5>
+                            </div>
+                            <div class="row gx-5">
+                              <h5 class="card-title col mb-2">Mulai</h5>
+                              <h5 class="card-title col mb-2">:</h5>
+                              <h5 class="card-title col mb-2"><?= $p['jadwal_mulai']?></h5>
+                            </div>
+                            <div class="row gx-5">
+                              <h5 class="card-title col mb-2">Selesai</h5>
+                              <h5 class="card-title col mb-2">:</h5>
+                              <h5 class="card-title col mb-2"><?= $p['jadwal_selesai']?></h5>
+                            </div>
+                          </div>
+                          <div class="card-footer text-body-secondary">
+                            Semoga Lekas Sembuh :)
+                          </div>
+                      </div>
 
                     <?php
                       }

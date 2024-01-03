@@ -82,10 +82,7 @@ if (isset($_POST["submit"])) {
 
       <!-- Main content -->
       <section class="content">
-        <div class="card card-info">
-          <div class="card-header">
-            <h3 class="card-title">Edit <small>Data Dokter</small></h3>
-          </div>
+        <div class="card">
           <form id="editForm" action="" method="POST">
             <input type="hidden" name="id" value="<?= $dokter["id"]; ?>">
             <div class="card-body">
@@ -101,8 +98,8 @@ if (isset($_POST["submit"])) {
                 <label for="no_hp">Telepon Dokter</label>
                 <input type="number" id="no_hp" name="no_hp" class="form-control" value="<?= $dokter['no_hp']; ?>">
               </div>
-              <div class="d-flex justify-content-center">
-                <button type="submit" name="submit" id="submitButton" class="btn btn-primary" disabled>Simpan Perubahan</button>
+              <div class="d-flex justify-content-left">
+                <button type="submit" name="submit" id="submitButton" class="btn btn-success" disabled>Update</button>
               </div>
             </div>
           </form>

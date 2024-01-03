@@ -39,6 +39,12 @@ ob_flush();
 // Content section
 ob_start();
 ?>
+<style>
+  .grid-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr); /* 8 kolom dengan lebar yang sama */
+}
+</style>
 <div class="card">
   <div class="card-header">
     <h3 class="card-title">Daftar Riwayat Pasien</h3>
@@ -86,7 +92,8 @@ ob_start();
                                   pr.*,
                                   d.nama AS 'nama_dokter',
                                   dpo.keluhan AS 'keluhan',
-                                  GROUP_CONCAT(o.nama_obat SEPARATOR ', ') AS 'obat'
+                                  GROUP_CONCAT(o.nama_obat SEPARATOR ', ') AS 'obat',
+                                  pr.biaya_periksa AS 'biaya_periksa'
                               FROM periksa pr
                               LEFT JOIN daftar_poli dpo ON (pr.id_daftar_poli = dpo.id)
                               LEFT JOIN jadwal_periksa jp ON (dpo.id_jadwal = jp.id)
@@ -102,16 +109,17 @@ ob_start();
             <div class="modal-dialog modal-xl modal-dialog-scrollable modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalScrollableTitle">Riwayat <?= $d['nama'] ?></h5>
+                  <h5 class="modal-title" id="exampleModalScrollableTitle">Riwayat Pasien <?= $d['nama'] ?></h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body w-100">
                   <!-- Mulai Tabel -->
                   <?php if ($data2->rowCount() == 0) : ?>
                     <h5>Tidak Ditemukan Riwayat Periksa</h5>
                   <?php else : ?>
+                   
                     <div class="grid-container">
                       <div class="grid-item">No</div>
                       <div class="grid-item">Tanggal Periksa</div>
@@ -120,7 +128,13 @@ ob_start();
                       <div class="grid-item">Keluhan</div>
                       <div class="grid-item">Catatan</div>
                       <div class="grid-item">Obat</div>
+                      <div class="grid-item">Total Tagihan</div>
+
+
+
                       <?php while ($da = $data2->fetch()) : ?>
+    
+
                         <div class="grid-item"><?= $no++; ?></div>
                         <div class="grid-item"><?= $da['tgl_periksa']; ?></div>
                         <div class="grid-item"><?= $da['nama_pasien']; ?></div>
@@ -128,9 +142,11 @@ ob_start();
                         <div class="grid-item"><?= $da['keluhan']; ?></div>
                         <div class="grid-item"><?= $da['catatan']; ?></div>
                         <div class="grid-item"><?= $da['obat']; ?></div>
+                        <div class="grid-item"><?= 'Rp ' . number_format($da['biaya_periksa'], 2, ",", "."); ?></div>
                       <?php endwhile; ?>
                       <?php $no = 1; ?>
-                    </div>
+                      </div>
+
                   <?php endif ?>
                   <!-- Akhir dari Tabel -->
                 </div>

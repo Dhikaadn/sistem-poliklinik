@@ -78,9 +78,9 @@ ob_start();
                     <td>
                     <?php if ($pasiens["status_periksa"] == 0) { ?>
                         <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalTambahPeriksa">Periksa</button> -->
-                        <a href="create.php/<?= $pasiens['id_pasien'] ?>" class="btn btn-primary"><i class="fas fa-stethoscope"></i> Check-Up </a>
+                        <a href="create.php/<?= $pasiens['id_pasien'] ?>" class="btn btn-success"><i class="fas fa-stethoscope"></i> Check-Up </a>
                         <?php } else { ?>
-                          <a href="edit.php/<?= $pasiens['id_periksa'] ?>" class="btn btn-warning"><i class="fa fa-edit"></i> Edit </a>
+                          <a href="edit.php/<?= $pasiens['id_periksa'] ?>" class="btn btn-info"><i class="fa fa-edit"></i> Ubah </a>
                       <?php } ?>
                     </td>
                   </tr>
