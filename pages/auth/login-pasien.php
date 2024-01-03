@@ -35,19 +35,9 @@ if (isset($_SESSION['login'])) {
       <form action="" method="post">
         <div class="input-group mb-3">
           <input type="text" class="form-control" placeholder="Username" name="nama">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-envelope"></span>
-            </div>
-          </div>
         </div>
         <div class="input-group mb-3">
           <input type="password" class="form-control" placeholder="Password" name="alamat">
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-lock"></span>
-            </div>
-          </div>
         </div>
         <?php if (isset($_SESSION['error'])) : ?>
               <p style="color: red; font-style: italic; margin-bottom: 1rem;"><?php echo $_SESSION['error'];

@@ -78,38 +78,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <form action="" method="post">
         <div class="input-group mb-3">
           <input type="text" class="form-control" required placeholder="Nama lengkap" name="nama" >
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-user"></span>
-            </div>
-          </div>
         </div>
         <!-- alamat -->
         <div class="input-group mb-3">
           <input type="text" class="form-control" required placeholder="alamat" name="alamat" >
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fa fa-map-marker"></span>
-            </div>
-          </div>
         </div>
         <!-- no ktp -->
         <div class="input-group mb-3">
           <input type="number" class="form-control" required placeholder="No KTP" name="no_ktp" >
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fa fa-address-book"></span>
-            </div>
-          </div>
         </div>
         <!-- no hp -->
         <div class="input-group mb-3">
           <input type="number" class="form-control" required placeholder="NO HP" name="no_hp" >
-          <div class="input-group-append">
-            <div class="input-group-text">
-              <span class="fas fa-phone-square"></span>
-            </div>
-          </div>
         </div>
 
 

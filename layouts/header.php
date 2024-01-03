@@ -11,26 +11,13 @@
         <li class="nav-item">
             <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="#" class="nav-link">Home</a>
-        </li>
-        <li class="nav-item d-none d-sm-inline-block">
-            <a href="http://<?= $_SERVER['HTTP_HOST']?>/sistem-poliklinik/pages/auth/destroy.php" class="nav-link">Logout</a>
-        </li>
     </ul>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-    <!-- dropdown log out -->
-    <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-            <i class="far fa-user"></i>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <div class="dropdown-divider"></div>
-            <a href="http://<?= $_SERVER['HTTP_HOST']?>/sistem-poliklinik/pages/auth/destroy.php" class="dropdown-item">Logout</a>
-        </div>
-    </li>
+    <li class="nav-item d-none d-sm-inline-block">
+            <a href="http://<?= $_SERVER['HTTP_HOST']?>/sistem-poliklinik/pages/auth/destroy.php" class="nav-link">Logout</a>
+        </li>
 </ul>
 </nav>
 <!-- /.navbar -->

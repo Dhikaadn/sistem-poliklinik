@@ -64,6 +64,12 @@ if (isset($_POST['submit'])) {
   <!-- summernote -->
   <link rel="stylesheet" href="../../../plugins/summernote/summernote-bs4.min.css">
 </head>
+<style>
+  .card-header{
+    background-color: #8A2BE2;
+    color: white;
+  }
+</style>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
 
@@ -93,41 +99,41 @@ if (isset($_POST['submit'])) {
     <section class="content">
       <div class="container-fluid">
 
-      <div class="row">
-        <div class="col-4">
+      <div class="col">
+        <div class="col-lg-12">
           <!-- Registrarion poli -->
           <div class="card">
-            <h5 class="card-header bg-info">Daftar Poli</h5>
+            <h5 class="card-header">Daftar Poli</h5>
             <div class="card-body">
 
-              <form action="" method="POST">
+              <form action="" method="POST" >
                 <input type="hidden" value="<?= $id_pasien ?>" name="id_pasien">
-                <div class="mb-3">
-                  <label for="no_rm" class="form-label">Nomor Rekam Medis</label>
-                  <input type="text " class="form-control" id="no_rm" placeholder="nomor rekam medis" name="no_rm" value="<?= $no_rm ?>">
-                </div>
+                <div class="d-flex flex-wrap justify-content-around align-items-center">
+                  <div class="mb-3">
+                    <label for="no_rm" class="form-label">Nomor Rekam Medis</label>
+                    <input type="text " class="form-control" id="no_rm" placeholder="nomor rekam medis" name="no_rm" value="<?= $no_rm ?>">
+                  </div>
 
-                <div class="mb-3">
-                  <label for="inputPoli" class="form-label">Pilih Poli</label>
-                  <select id="inputPoli" class="form-control">
-                    <option>Open this select menu</option>
-                    <?php
-                    $data = $pdo->prepare("SELECT * FROM poli");
-                    $data->execute();
-                    if ($data->rowCount() == 0) {
-                      echo "<option>Tidak ada poli</option>";
-                    } else {
-                      while($d = $data->fetch()) {
-                    ?>
-                      <option value="<?= $d['id'] ?>"><?= $d['nama_poli'] ?></option> 
-                    <?php
+                  <div class="mb-3">
+                    <label for="inputPoli" class="form-label">Pilih Poli</label>
+                    <select id="inputPoli" class="form-control">
+                      <option>Open this select menu</option>
+                      <?php
+                      $data = $pdo->prepare("SELECT * FROM poli");
+                      $data->execute();
+                      if ($data->rowCount() == 0) {
+                        echo "<option>Tidak ada poli</option>";
+                      } else {
+                        while($d = $data->fetch()) {
+                      ?>
+                        <option value="<?= $d['id'] ?>"><?= $d['nama_poli'] ?></option> 
+                      <?php
+                        }
                       }
-                    }
-                    ?>
-                  </select>
-                </div>
-                
-                <div class="mb-3">
+                      ?>
+                    </select>
+                  </div>
+                  <div class="mb-3">
                   <label for="inputJadwal" class="form-label">Pilih Jadwal</label>
                   <select id="inputJadwal" class="form-control" name="id_jadwal">
                     <option selected>Open this select menu</option>
@@ -138,6 +144,10 @@ if (isset($_POST['submit'])) {
                   <label for="keluhan" class="form-label">Keluhan</label>
                   <textarea class="form-control" id="keluhan" rows="3" name="keluhan"></textarea>
                 </div>
+                </div>
+               
+                
+                
                 <button type="submit" name="submit" class="btn btn-success">Registrasi</button>
               </form>
               
@@ -149,7 +159,7 @@ if (isset($_POST['submit'])) {
         <div class="col">
           <!-- Registration poli history -->
           <div class="card">
-            <h5 class="card-header bg-info">Riwayat daftar poli</h5>
+            <h5 class="card-header">Riwayat daftar poli</h5>
             <div class="card-body">
               <table class="table table-striped">
                 <thead>
