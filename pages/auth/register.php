@@ -67,11 +67,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 </head>
-<body class="hold-transition register-page">
+<body class="hold-transition register-page bg-warning">
 <div class="register-box">
   <div class="card card-outline">
     <div class="card-header text-center">
-      <a href="../../index2.html" class="h1">Register Pasien</a>
+      <h3 class="login-pasien-text"><b>Register Pasien</b></h3>
     </div>
     <div class="card-body">
       <!-- nama -->

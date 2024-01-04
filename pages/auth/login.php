@@ -24,12 +24,22 @@ if (isset($_SESSION['login'])) {
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 </head>
-<body class="hold-transition login-page">
+<style>
+  .login-user-text{
+    color: black;
+  }
+
+  .button-home{
+    display: flex;
+    justify-content: space;
+  }
+</style>
+<body class="hold-transition login-page bg-info">
 <div class="login-box">
   <!-- /.login-logo -->
   <div class="card card-outline">
     <div class="card-header text-center">
-      <a href="../.." class="h1">Login User</a>
+      <h3 class="login-user-text"><b>Login User</b></h3>
     </div>
     <div class="card-body">
       <form action="" method="post">
@@ -43,7 +53,7 @@ if (isset($_SESSION['login'])) {
               <p style="color: red; font-style: italic; margin-bottom: 1rem;"><?php echo $_SESSION['error'];
                                                                               unset($_SESSION['error']); ?></p>
         <?php endif ?>
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mb-3">
           <!-- /.col -->
           <div class="col-4">
             <button type="submit" class="btn btn-success btn-block" name="submit">Sign In</button>

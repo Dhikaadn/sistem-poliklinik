@@ -24,12 +24,18 @@ if (isset($_SESSION['login'])) {
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 </head>
-<body class="hold-transition login-page">
+
+<style>
+  .login-pasien-text{
+    color: black;
+  }
+</style>
+<body class="hold-transition login-page bg-warning">
 <div class="login-box">
   <!-- /.login-logo -->
   <div class="card card-outline">
     <div class="card-header text-center">
-      <a href="../.." class="h1">Login Pasien</a>
+      <h3 class="login-pasien-text"><b>Login Pasien</b></h3>
     </div>
     <div class="card-body">
       <form action="" method="post">
