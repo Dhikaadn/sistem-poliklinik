@@ -103,12 +103,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
         </div> -->
         
-        <div class="row justify-content-center mb-3">
+        <div class="row justify-content-around mb-3">
+          <a href="../../index.php"><i class='fas fa-home mt-1' style='font-size:24px;color:black'></i></a>
+
           <!-- /.col -->
-          <div class="col-4">
-            <button type="submit" class="btn btn-success btn-block">Register</button>
+          <div class="col-5">
+            <button type="submit" class="btn btn-success btn-block" name="submit">Register</button>
           </div>
           <!-- /.col -->
+          <div class="col-1"></div>
+
         </div>
       </form>
       Sudah punya akun?

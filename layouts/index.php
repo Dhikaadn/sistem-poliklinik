@@ -19,6 +19,7 @@
       padding: 10px;
       border: 1px solid #dee2e6;
     }
+
   </style>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
